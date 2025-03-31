@@ -41,6 +41,7 @@ function KareninAlani(kenaruzunlugu) {
 }
 
 /* (Oto test yok) Yukarıdaki KareninAlani fonksiyonunu kenar uzunluğu = 10 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
+console.log(KareninAlani(10));
 
 /* GÖREV 1:  
 - CemberinCevresi fonksiyonunu kullanarak aşağıdaki yönergeleri uygulayın:
@@ -50,12 +51,12 @@ function KareninAlani(kenaruzunlugu) {
 	4. Hesaplanan çemberin çevresi döndürülecektir.
 */
 
-function CemberinCevresi(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinCevresi(yaricap) {
+  return 2 * pi * yaricap;
 }
 
 /* (Oto test yok) Yukarıdaki CemberinCevresi fonksiyonunu yarıçap = 5 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
-
+console.log(CemberinCevresi(5));
 /* 	GÖREV 2:  
 - CemberinAlani fonksiyonunu kullanarak aşağıdaki yönergeleri uygulayın:
 	1. Argüman olarak çemberin yarıçapını BİRİNCİ parametre olacak alacaktır. 
@@ -64,9 +65,10 @@ function CemberinCevresi(/* kodlar buraya */) {
 	4. Hesaplanan çemberin alanı döndürülecektir.
 */
 
-function CemberinAlani(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinAlani(yaricap,pi) {
+  return pi * Math.pow(yaricap,2)
 }
+console.log(CemberinAlani(15));
 
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -98,28 +100,74 @@ let ucetambolunenler,
   tekraredensayilar;
 
 // 3a çözümü
+enbuyuk = sayilar[0];
+for (let i=1;i<sayilar.length;i++)
+{
+  if(enbuyuk<sayilar[i])
+  {
+    enbuyuk = sayilar[i];
+  }
 
-/* kodlar buraya */
+}
+enkucuk = sayilar[0];
+for (let i=1;i<sayilar.length;i++)
+  {
+    if(enkucuk>sayilar[i])
+    {
+      enkucuk = sayilar[i];
+    }
+  
+  };
+
+
+
 
 // 3b çözümü:
 
-/* kodlar buraya */
+function tambolunen(element,index)
+{
+  ucetambolunenler = [];
+  if(element%3===0)
+  {
+    ucetambolunenler[index] = element;
+  }
+}
+sayilar.forEach(tambolunen);
+
 
 // 3c çözümü:
 
 /* kodlar buraya */
+ucebolunenlerintoplami = ucetambolunenler.reduce((acc,x) => acc + x,0);
 
 // 3d çözümü
 
 /* kodlar buraya */
+besyuzdenkucuksayilar = sayilar.filter((sayi)=>sayi<500);
 
 // 3e çözümü
 
 /* kodlar buraya */
+siralisayilar = [...besyuzdenkucuksayilar];
+siralisayilar.sort();
+
 
 // 3f çözümü
 
 /* kodlar buraya */
+for(let i=0;i<sayilar.length;i++)
+{
+  let tekrarSayisi;
+  for(let k=0;k<sayilar.length;k++)
+  {
+    if(sayilar[i]===sayilar[k])
+    {
+      tekrarSayisi++;
+      
+    }
+    tekraredensayilar.push(`${sayilar[k]} sayısı ${tekrarSayisi} kere tekrar edilmiştir"`);
+  }
+}
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
